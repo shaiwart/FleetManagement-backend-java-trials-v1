@@ -13,7 +13,7 @@ import com.example.entities.Car;
 import com.example.services.CarManager;
 
 
-
+// use RestController instead of Controller 
 @RestController
 public class CarController {
 	
