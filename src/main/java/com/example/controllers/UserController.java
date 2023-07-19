@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.RestController;
 import com.example.entities.User;
 import com.example.services.UserManager;
 
+// use CORS here instead of writig it with every request handeler 
+@CrossOrigin(origins = "*")
 @RestController
 public class UserController {
 	
@@ -19,7 +21,7 @@ public class UserController {
 	
 	
 	// add a user
-	@CrossOrigin(origins = "*")
+	// @CrossOrigin(origins = "*")
 	@PostMapping(value="api/user") 
 	public void addUser(@RequestBody User user) {
 		userMan.addUser(user); 
@@ -27,7 +29,7 @@ public class UserController {
 	
 	
 	// get a user by id 
-	@CrossOrigin(origins = "*")
+	// @CrossOrigin(origins = "*")
 	@GetMapping(value="api/user/{id}")
 	public User findById(@PathVariable int id) {
 		return userMan.findById(id); 

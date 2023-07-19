@@ -14,7 +14,8 @@ import com.example.services.CarManager;
 
 
 // use RestController instead of Controller // 
-// 
+// use CORS here instead of writig it with every request handeler 
+@CrossOrigin(origins = "*")
 @RestController
 public class CarController {
 	
@@ -32,7 +33,7 @@ public class CarController {
 	
 	
 	// get all cars 
-	@CrossOrigin(origins = "*")
+	// @CrossOrigin(origins = "*")
 	@GetMapping(value="api/cars")
 	List<Car> viewAll() {
 		return carMan.viewAll(); 
@@ -40,7 +41,7 @@ public class CarController {
 	
 	
 	// get a car by category 
-	@CrossOrigin(origins = "*")
+	// @CrossOrigin(origins = "*")
 	@GetMapping(value="api/car/{category}")
 	List<Car> findByCategory(@PathVariable String category) {
 		return carMan.findByCategory(category); 
